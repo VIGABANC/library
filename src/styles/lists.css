@@ -1,0 +1,71 @@
+/* Updated Container Styling to Appear as a Modal-Like Element with More Height */
+.containerList {
+    position: fixed;              /* Fixed positioning so it stays in place */
+    top: 50%;                     /* Center vertically */
+    left: 57%;                    /* Center horizontally */
+    transform: translate(-50%, -50%); /* Precisely center the container */
+    background-color: #fff;       /* White background */
+    border-radius: 8px;           /* Rounded corners */
+    padding: 20px 30px;           /* Adequate internal spacing */
+    width: 100%;                  /* Responsive width */
+    max-width: 1100px;            /* Maximum width */
+    min-height: 90vh;             /* Ensure the container uses at least 90% of the viewport height */
+    max-height: 95vh;             /* Allow up to 95% of the viewport height */
+    overflow-y: auto;             /* Vertical scroll if content overflows */
+    z-index: 1000;                /* High z-index to appear on top of other components */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle drop shadow */
+    animation: fadeIn 0.4s ease-in-out;           /* Smooth fade-in effect */
+  }
+  
+  .header {
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-item {
+    flex: 1;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Row Styling */
+  .row {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .row:last-child {
+    border-bottom: none;
+  }
+  
+  /* Cell Styling */
+  .cell {
+    flex: 1;
+    text-align: center;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Optional: Remove or comment out any unused modal-overlay or .modal styles */
+  

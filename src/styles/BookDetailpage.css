@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --card-bg: #fff;
+  --primary-color: #6c63ff; 
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.book-details {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.book-header {
+  flex: 1 1 300px;
+  max-width: 300px;
+}
+
+.book-header img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.book-info {
+  flex: 2 1 400px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.book-info .book-title {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.book-info .book-author {
+  margin: 5px 0 15px;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.book-meta p,
+.book-rating p,
+.book-availability p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* Description styling */
+.book-description {
+  margin-top: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+
+
+.book-actions {
+  bottom: 15px; 
+  position: relative;
+  left: 50%;
+  justify-content: space-between;
+  top: 5%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.borrow-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.borrow-btn:hover {
+  background-color: #574bff;
+}
+
+.favorite-btn {
+  background-color: #ff4757;
+  color: white;
+}
+
+.favorite-btn:hover {
+  background-color: #e63946; 
+}
+
+.borrow-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.borrow-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.borrow-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.borrow-form .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.borrow-form .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.borrow-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.borrow-form .cancel-btn {
+  background-color: #dc3545;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.borrow-form .cancel-btn:hover {
+  background-color: #c82333;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

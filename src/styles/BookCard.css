@@ -1,0 +1,41 @@
+
+.card {
+  cursor: pointer;
+
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  width: 160px; 
+  overflow: hidden; 
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px; /* Rounded corners */
+  border-top-right-radius: 10px; /* Rounded corners */
+}
+
+.card-content {
+  padding: 7px;
+}
+
+.card-title {
+  font-size: 1em; 
+  margin: 0; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  color: #333;
+}
+
+
+.card-author {
+  font-size: 0.8em;
+  color: #777; /* Author color */
+}
+

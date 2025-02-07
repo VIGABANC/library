@@ -1,0 +1,73 @@
+
+  
+  .containerLogin {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    
+    position: relative; 
+    left: 250px;
+    
+
+  }
+  
+  .containerLogin h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #444;
+  }
+  
+  .containerLogin .Form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+  
+  .containerLogin input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .containerLogin input:focus {
+    border-color: #007bff;
+  }
+  
+  .containerLogin button {
+    padding: 0.8rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .containerLogin button:hover {
+    background: #0056b3;
+  }
+  
+  .containerLogin p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .containerLogin a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .containerLogin a:hover {
+    color: #0056b3;
+  }
+  

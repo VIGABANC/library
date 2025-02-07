@@ -1,0 +1,793 @@
+/* Root variables */
+:root {
+  /* Primary Colors */
+  --color-background: #FBFBFB;
+  --color-secondary-background: #E8F9FF;
+  --color-accent: #C4D9FF;
+  --color-hover: #5B9DFF;
+  --color-click: #5B9DFF;
+  
+  /* Text Colors */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #5A5A5A;
+  --color-text-accent: #FFFFFF;
+  --color-text-hover: #1A1A1A;
+
+  /* Borders and Shadows */
+  --color-border: #D1E3FF;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Status Colors */
+  --color-success: #A4D9C3;
+  --color-error: #FFB3B3;
+  --color-warning: #FFD699;
+
+  /* Button Colors */
+  --color-button-bg: #C4D9FF;
+  --color-button-hover: #AFC8FF;
+  --color-button-text: #FFFFFF;
+
+  /* Transition Durations */
+  --tran-2: all 0.2s ease;
+  --tran-3: all 0.3s ease;
+  --tran-4: all 0.4s ease;
+  --tran-5: all 0.5s ease;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.dashboard {
+  width: 90vw; 
+  margin: 1.8rem auto; 
+  padding: 1.8rem; 
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+h1, h2 {
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 2.25rem; 
+  margin-bottom: 1.125rem; 
+}
+
+h2 {
+  font-size: 1.62rem; 
+  margin-bottom: 0.9rem; 
+}
+
+.admin .topTables {
+  display: flex;
+  gap: 1.125rem; 
+  width: 100%;
+
+  margin-bottom: 2.25rem; 
+}
+
+.listOfUser, .listOfBorrowedBooks, .listOfBooks {
+  width: 100%;
+  padding: 1.125rem; 
+  background-color: var(--color-secondary-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tablesHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.125rem; 
+}
+
+button {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  padding: 0.5625rem 1.125rem; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--tran-3);
+}
+
+.addBook {
+  background-color: #5B9DFF;
+}
+
+button:hover, button:focus {
+  background-color: var(--color-button-hover);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5625rem; 
+}
+
+th, td {
+  padding: 0.5625rem; 
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-accent);
+  color: var(--color-text-accent);
+}
+
+td {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+tr:hover {
+  background-color: var(--color-hover);
+}
+
+/* Buttons inside tables */
+.returnBtn {
+  background-color: var(--color-success);
+  color: var(--color-text-accent);
+}
+
+.returnBtn:hover {
+  background-color: #86C9A1;
+}
+
+/* User View */
+.user {
+  padding: 1.125rem; 
+  background-color: var(--color-secondary-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.user h2 {
+  font-size: 1.8rem; 
+}
+
+.userContent {
+  padding: 0.5625rem; 
+  color: var(--color-text-secondary);
+  font-size: 0.9rem; 
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .topTables {
+      flex-direction: column;
+  }
+
+  .tablesHead {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  button {
+      width: 100%;
+      margin-top: 0.5625rem; 
+  }
+
+  .dashboard {
+      padding: 1.8rem; 
+  }
+
+  table {
+      font-size: 0.81rem; 
+  }
+}
+
+.userSections {
+  margin-top: 1.6875rem; 
+}
+
+/* Table Headers */
+.tablesHead h3 {
+  font-size: 1.44rem; 
+  color: var(--color-text-primary);
+  margin-bottom: 0.5625rem; 
+}
+
+/* Cards for Favorite Books */
+.myFavorites {
+  width: 100%;
+  padding: 1.125rem; 
+  background-color: var(--color-secondary-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.125rem; 
+}
+
+.favoriteBooksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.125rem; 
+  justify-content: space-between;
+}
+
+.bookCard {
+  background-color: var(--color-background);
+  padding: 0.84375rem; 
+  width: calc(30% - 1.125rem); 
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.bookCard h4 {
+  font-size: 1.08rem; 
+  margin: 0.5625rem 0; 
+}
+
+.bookCard p {
+  font-size: 0.9rem; 
+  color: var(--color-text-secondary);
+}
+
+.bookCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.Editerole {
+  border: none;
+  background-color: #86C9A1;
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+}
+.addBook-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px); /* Blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's above everything */
+}
+
+/* Modal Container */
+.addBook-container {
+  background: #ffffff;
+  padding: 20px;
+  width: 90%;
+/* Root variables */
+:root {
+  /* Primary Colors */
+  --color-background: #FBFBFB;
+  --color-secondary-background: #E8F9FF;
+  --color-accent: #C4D9FF;
+  --color-hover: #5B9DFF;
+  --color-click: #5B9DFF;
+  
+  /* Text Colors */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #5A5A5A;
+  --color-text-accent: #FFFFFF;
+  --color-text-hover: #1A1A1A;
+
+  /* Borders and Shadows */
+  --color-border: #D1E3FF;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Status Colors */
+  --color-success: #A4D9C3;
+  --color-error: #FFB3B3;
+  --color-warning: #FFD699;
+
+  /* Button Colors */
+  --color-button-bg: #C4D9FF;
+  --color-button-hover: #AFC8FF;
+  --color-button-text: #FFFFFF;
+
+  /* Transition Durations */
+  --tran-2: all 0.2s ease;
+  --tran-3: all 0.3s ease;
+  --tran-4: all 0.4s ease;
+  --tran-5: all 0.5s ease;
+}
+
+.dashboard {
+  max-width: 90vw; 
+  margin: 1.5rem auto; 
+  padding: 1.5rem; 
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+h1, h2 {
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 2rem; 
+  margin-bottom: 1rem; 
+}
+
+h2 {
+  font-size: 1.4rem; 
+  margin-bottom: 0.8rem; 
+}
+
+.admin .topTables {
+  display: flex;
+  gap: 1rem; 
+  margin-bottom: 2rem; 
+}
+
+.listOfUser, .listOfBorrowedBooks, .listOfBooks {
+  width: 100%;
+  padding: 1rem; 
+  background-color: var(--color-secondary-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tablesHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; 
+}
+
+button {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  padding: 0.5rem 1rem; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--tran-3);
+}
+
+.addBook {
+  background-color: #5B9DFF;
+}
+
+button:hover, button:focus {
+  background-color: var(--color-button-hover);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem; 
+}
+
+th, td {
+  padding: 0.5rem; 
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-accent);
+  color: var(--color-text-accent);
+}
+
+td {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+tr:hover {
+  background-color: var(--color-hover);
+}
+
+/* Buttons inside tables */
+.returnBtn {
+  background-color: var(--color-success);
+  color: var(--color-text-accent);
+}
+
+.returnBtn:hover {
+  background-color: #86C9A1;
+}
+
+/* User View */
+.user {
+  padding: 1rem; 
+  background-color: var(--color-secondary-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.user h2 {
+  font-size: 1.6rem; 
+}
+
+.userContent {
+  padding: 0.5rem; 
+  color: var(--color-text-secondary);
+  font-size: 0.9rem; 
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .topTables {
+      flex-direction: column;
+  }
+
+  .tablesHead {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  button {
+      width: 100%;
+      margin-top: 0.5rem; 
+  }
+
+  .dashboard {
+      padding: 1.5rem; 
+  }
+
+  table {
+      font-size: 0.9rem; 
+  }
+}
+
+.userSections {
+  margin-top: 1.5rem; 
+}
+
+/* Table Headers */
+.tablesHead h3 {
+  font-size: 1.4rem; 
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem; 
+}
+
+/* Cards for Favorite Books */
+.myFavorites {
+  width: 100%;
+  padding: 1rem; 
+  background-color: var(--color-secondary-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem; 
+}
+
+.favoriteBooksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; 
+  justify-content: space-between;
+}
+
+.bookCard {
+  background-color: var(--color-background);
+  padding: 0.75rem; 
+  width: calc(30% - 1rem); 
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.bookCard h4 {
+  font-size: 1rem; 
+  margin: 0.5rem 0; 
+}
+
+.bookCard p {
+  font-size: 0.8rem; 
+  color: var(--color-text-secondary);
+}
+
+.bookCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.Editerole {
+  border: none;
+  background-color: #86C9A1;
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+};
+}
+
+
+button {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  padding: 0.5rem 1rem; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--tran-3);
+}
+
+.addBook {
+  background-color: #5B9DFF;
+}
+
+button:hover, button:focus {
+  background-color: var(--color-button-hover);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem; 
+}
+
+th, td {
+  padding: 0.5rem; 
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-accent);
+  color: var(--color-text-accent);
+}
+
+td {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+tr:hover {
+  background-color: var(--color-hover);
+}
+
+/* Buttons inside tables */
+.returnBtn {
+  background-color: var(--color-success);
+  color: var(--color-text-accent);
+}
+
+.returnBtn:hover {
+  background-color: #86C9A1;
+}
+
+/* User View */
+.user {
+  padding: 1rem; 
+  background-color: var(--color-secondary-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.user h2 {
+  font-size: 1.6rem; 
+}
+
+.userContent {
+  padding: 0.5rem; 
+  color: var(--color-text-secondary);
+  font-size: 0.9rem; 
+}
+
+@media screen and (max-width: 768px) {
+  .topTables {
+      flex-direction: column;
+  }
+
+  .tablesHead {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  button {
+      width: 100%;
+      margin-top: 0.5rem; 
+  }
+
+  .dashboard {
+      padding: 1.5rem; 
+  }
+
+  table {
+      font-size: 0.9rem; 
+  }
+}
+
+.userSections {
+  margin-top: 1.5rem; 
+}
+
+.tablesHead h3 {
+  font-size: 1.4rem; 
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem; 
+}
+
+.userContent{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.favbookCard{
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  
+  padding: 10px;
+  gap: 50px;
+}
+.Editerole {
+  border: none;
+  background-color: #86C9A1;
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+};
+
+
+
+.addBook-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px; /* Adjusted padding */
+  font-size: 14px; /* Smaller button text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addBook-btn:hover {
+  background-color: #0056b3;
+}
+
+.addBook-container .close-btn {
+  background-color: transparent;
+  color: #333;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all 0.3s ease;
+}
+
+.addBook-container .close-btn:hover {
+  color: #007bff;
+}
+/* Description Textarea Styling */
+.input.description {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-background);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical; /* Allow vertical resizing */
+  font-family: inherit; /* Ensure consistent font */
+}
+
+.input.description:focus {
+  border-color: var(--color-hover);
+  box-shadow: 0 0 5px rgba(91, 157, 255, 0.5); /* Use your accent color */
+  outline: none;
+}
+
+.input.description::placeholder {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.action{
+  display: flex;
+  justify-content: space-around;
+}
+
+.editBtn{
+  background-color: #86C9A1;
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+}
+.removeBtn{
+  background-color: #FF0000;
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+}
+.SeeAll{
+  background-color: #007bff;
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+  left: 88%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 120px;
+  justify-content: center;
+  top: 10px;
+  cursor: pointer;
+}
+.SeeAll:focus{
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  background-color: var(--color-success);
+}
+button:focus{
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  background-color: var(--color-success);
+}
+.Seeall2{
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+  background-color: #007bff;
+  left: 74%;
+  position: relative;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  height: 40px; 
+  width: 130px;
+  cursor: pointer;
+  align-items: center;
+}
+.SeeAll3{
+  color: #fff;
+  font: 1em sans-serif;
+  border-radius: 4px;
+  background-color: #007bff;
+  left: 74%;
+  position: relative;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  height: 40px; 
+  width: 130px;
+  cursor: pointer;
+  align-items: center;
+}
+/* Corrected class name to match the JSX */
+
