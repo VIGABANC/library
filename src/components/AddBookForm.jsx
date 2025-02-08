@@ -110,6 +110,7 @@ function AddBook({
               onChange={(e) => setBookTitle(e.target.value)}
               placeholder="Title"
               className="input title"
+              required
             />
           </div>
           <div className="input-group">
@@ -119,6 +120,7 @@ function AddBook({
               value={bookAuthor}
               onChange={(e) => setBookAuthor(e.target.value)}
               placeholder="Author"
+              required
               className="input author"
             />
           </div>
@@ -127,6 +129,7 @@ function AddBook({
             <input
               type="number"
               value={bookRating}
+              required
               onChange={(e) => setBookRating(e.target.value)}
               placeholder="Rating (0-5)"
               min="0"
@@ -139,6 +142,7 @@ function AddBook({
             <input
               type="number"
               value={bookPages}
+              required
               onChange={(e) => setBookPages(e.target.value)}
               placeholder="Pages"
               min="0"
@@ -149,6 +153,7 @@ function AddBook({
             <label>ISBN</label>
             <input
               type="text"
+              required
               value={bookisbn}
               onChange={(e) => setBookisbn(e.target.value)}
               placeholder="Example 0000-000000000"
@@ -158,6 +163,7 @@ function AddBook({
           <div className="input-group">
             <label>Publish Date</label>
             <input
+              required
               type="date"
               value={bookpublishDate}
               onChange={(e) => setBookpublishDate(e.target.value)}
@@ -168,6 +174,7 @@ function AddBook({
             <label>Book Cover</label>
             <input
               type="file"
+              required
               onChange={handleFileChange}
               className="input bookCover"
               accept="image/png, image/jpeg, image/jpg"
@@ -177,6 +184,7 @@ function AddBook({
             <label>Category</label>
             <select
               value={bookcategory}
+              required
               onChange={(e) => setBookcategory(e.target.value)}
               className="input category"
             >
@@ -192,6 +200,7 @@ function AddBook({
             <label>Language</label>
             <select
               value={bookLanguage}
+              required
               onChange={(e) => setBookLanguage(e.target.value)}
               className="input language"
             >
@@ -207,6 +216,7 @@ function AddBook({
             <label>Description</label>
             <textarea
               value={bookDescription}
+              required
               onChange={(e) => setBookDescription(e.target.value)}
               placeholder="Description"
               className="input description"
