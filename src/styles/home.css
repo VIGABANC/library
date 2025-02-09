@@ -1,0 +1,119 @@
+/* ============== Root =============== */
+:root {
+  /* Primary Colors */
+  --color-background: #FBFBFB; /* Light gray for main background */
+  --color-secondary-background: #E8F9FF; /* Soft blue for sections */
+  --color-accent: #C4D9FF; /* Accent color for highlights */
+  --color-hover: #5B9DFF; /* Hover effect or interactive elements */
+  --color-click: #5B9DFF; /* Vibrant blue for active state */
+  
+  /* Text Colors */
+  --color-text-primary: #1A1A1A; /* Dark gray for main text */
+  --color-text-secondary: #5A5A5A; /* Light gray for secondary text */
+  --color-text-accent: #FFFFFF; /* White for text on accent areas */
+  --color-text-hover: #1A1A1A; /* Text hover color */
+
+  /* Borders and Shadows */
+  --color-border: #D1E3FF; /* Light blue for borders */
+  --color-shadow: rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  /* Status Colors */
+  --color-success: #A4D9C3; /* Soft green for success messages */
+  --color-error: #FFB3B3; /* Soft red for error messages */
+  --color-warning: #FFD699; /* Light yellow for warnings */
+
+  /* Button Colors */
+  --color-button-bg: #C4D9FF; /* Button background */
+  --color-button-hover: #AFC8FF; /* Button hover state */
+  --color-button-text: #FFFFFF; /* Button text color */
+
+  /* Transition Durations */
+  --tran-2: all 0.2s ease;
+  --tran-3: all 0.3s ease;
+  --tran-4: all 0.4s ease;
+  --tran-5: all 0.5s ease;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Disable any overflow */
+}
+/* ============= Main Container =================== */
+.Container {
+  display: flex;
+  
+  flex-direction: column;
+  gap: 10px; /* Reduced space between sections even more */
+  padding: 0px;
+  height: 100vh; /* Make the container take full viewport height */
+  margin: auto; /* Center the container */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* ============= Sections ======================== */
+.Recommended, .Categories, .RecentlyAdded, .TopRatedBooks {
+  background-color: #f0f0f0;
+  padding: 10px; /* Reduced padding inside the cards */
+  border-radius: 6px; /* Smaller border radius for tighter look */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow for a more compact feel */
+  font-size: 1.2rem; /* Smaller font size */
+  margin-bottom: 10px; /* Reduced margin between cards */
+  height: auto; /* Adjust height to fit content */
+}
+
+.Recommended h1 {
+  color: var(--color-text-primary);
+}
+
+.Categories {
+  background-color: #fdd1d1;
+}
+
+.RecentlyAdded {
+  background-color: #d1fdd1;
+}
+
+.TopRatedBooks {
+  background-color: #f8d1fd;
+}
+
+/* Header Styling */
+.header {
+  color: #fff;
+  padding: 8px; /* Reduced padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Seeall {
+  background-color: var(--color-hover);
+  width: 130px; /* Smaller button width */
+  text-align: center;
+  height: 40px; /* Reduced button height */
+  font-size: 24px; /* Smaller font size */
+  align-items: center;
+  display: flex;
+  justify-content: center; /* Center text inside the button */
+  border-radius: 8px; /* Smaller border radius */
+  cursor: pointer;
+  color: var(--color-button-text);
+}
+
+.Seeall:hover {
+  background-color: var(--color-button-hover);
+  color: var(--color-text-accent);
+}
+.BooksContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of books if the container is too small */
+  justify-content: space-around; /* Space out books evenly */
+  align-items: center; /* Vertically center the books */
+  gap: 10px; /* Add space between the books */
+  padding: 5px 0; /* Padding for the book container */
+  flex-grow: 1; /* Makes the books container grow to fill remaining space */
+}
+.Link{
+  text-decoration: none;
+}

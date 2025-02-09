@@ -1,0 +1,23 @@
+.Categories {
+    display: flex;
+    flex-wrap: wrap; /* Allows the filters to wrap onto new lines if the screen is too small */
+    gap: 10px; /* Space between filters */
+    margin-bottom: 20px;
+  }
+  
+  .Category {
+    flex: 1 1 200px; /* This ensures the filters take up at least 200px and grow to fill available space */
+    max-width: 300px; /* You can set a max-width if you want to limit the size of filters */
+  }
+  
+  .BookList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .Genre, .Availability, .Language, .Rating, .PublicationYear {
+    /* Add specific styles for each select dropdown if needed */
+  }
+  
